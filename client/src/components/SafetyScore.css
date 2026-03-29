@@ -1,0 +1,70 @@
+.safety-score {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.safety-score.large {
+  width: 150px;
+  height: 150px;
+}
+
+.safety-score.medium {
+  width: 100px;
+  height: 100px;
+}
+
+.safety-score.small {
+  width: 60px;
+  height: 60px;
+}
+
+.score-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.score-ring-bg {
+  fill: none;
+  stroke: var(--gray-200);
+  stroke-width: 8;
+}
+
+.score-ring-progress {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease;
+}
+
+.score-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.safety-score.large .score-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.safety-score.medium .score-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.safety-score.small .score-value {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.score-label {
+  font-size: 0.75rem;
+  color: var(--gray-600);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

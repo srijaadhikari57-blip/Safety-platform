@@ -1,0 +1,111 @@
+.sos-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sos-button-container.large .sos-button {
+  width: 200px;
+  height: 200px;
+  font-size: 2.5rem;
+}
+
+.sos-button-container.medium .sos-button {
+  width: 120px;
+  height: 120px;
+  font-size: 1.5rem;
+}
+
+.sos-button-container.small .sos-button {
+  width: 80px;
+  height: 80px;
+  font-size: 1rem;
+}
+
+.sos-button {
+  position: relative;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--danger) 0%, var(--danger-dark) 100%);
+  border: none;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.sos-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(239, 68, 68, 0.5);
+}
+
+.sos-button.holding {
+  transform: scale(0.95);
+  box-shadow: 0 2px 15px rgba(239, 68, 68, 0.6);
+}
+
+.sos-button.active {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.progress-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-ring-circle {
+  fill: none;
+  stroke: white;
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.sos-text {
+  position: relative;
+  z-index: 1;
+}
+
+.sos-active-pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--danger);
+  animation: sos-pulse 1.5s ease-out infinite;
+}
+
+.sos-label {
+  color: var(--gray-600);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 20px rgba(239, 68, 68, 0);
+  }
+}
+
+@keyframes sos-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
